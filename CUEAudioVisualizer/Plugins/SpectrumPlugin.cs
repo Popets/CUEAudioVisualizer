@@ -43,7 +43,7 @@ namespace CUEAudioVisualizer.Plugins
                 RectangleF keyRect = key.KeyRectangle;
                 PointF keyCenterPos = new PointF(keyRect.Location.X + (keyRect.Width / 2f), keyRect.Location.Y + (keyRect.Height / 2f)); //Sample center of key
                 int barSampleIndex = (int)Math.Floor(barCount * (keyCenterPos.X / kbWidth)); //Calculate bar sampling index
-                float curBarHeight = 1f - Utility.Clamp(Host.SmoothedBarData[barSampleIndex] * 1.5f, 0f, 1f); //Scale values up a bit and clamp to 1f. I also invert this value since the keyboard is laid out with topleft being point 0,0
+                float curBarHeight = 1f - Utility.Clamp(Host.SmoothedBarData[barSampleIndex-1] * 1.5f, 0f, 1f); //Scale values up a bit and clamp to 1f. I also invert this value since the keyboard is laid out with topleft being point 0,0
                 float keyVerticalPos = (keyCenterPos.Y / kbHeight);
 
                 if (curBarHeight <= keyVerticalPos)
@@ -76,7 +76,7 @@ namespace CUEAudioVisualizer.Plugins
                 RectangleF keyRect = key.KeyRectangle;
                 PointF keyCenterPos = new PointF(keyRect.Location.X + (keyRect.Width / 2f), keyRect.Location.Y + (keyRect.Height / 2f)); //Sample center of key
                 int barSampleIndex = (int)Math.Floor(barCount * (keyCenterPos.X / kbWidth)); //Calculate bar sampling index
-                float curBarHeight = 1f - Utility.Clamp(Host.SmoothedBarData[barSampleIndex] * 1.5f, 0f, 1f); //Scale values up a bit and clamp to 1f. I also invert this value since the keyboard is laid out with topleft being point 0,0
+                float curBarHeight = 1f - Utility.Clamp(Host.SmoothedBarData[barSampleIndex-1] * 1.5f, 0f, 1f); //Scale values up a bit and clamp to 1f. I also invert this value since the keyboard is laid out with topleft being point 0,0
                 float keyVerticalPos = (keyCenterPos.Y / kbHeight);
 
                 if (curBarHeight <= keyVerticalPos)
@@ -106,7 +106,7 @@ namespace CUEAudioVisualizer.Plugins
                 float keyVerticalPos = (keyCenterPos.Y / kbHeight);
                 float keyHorizontalPos = (keyCenterPos.X / kbWidth);
                 int barSampleIndex = (int)Math.Floor(barCount * (keyCenterPos.X / kbWidth)); //Calculate bar sampling index
-                float curBarHeight = 1f - Utility.Clamp(Host.SmoothedBarData[barSampleIndex] * 1.5f, 0f, 1f); //Scale values up a bit and clamp to 1f. I also invert this value since the keyboard is laid out with topleft being point 0,0
+                float curBarHeight = 1f - Utility.Clamp(Host.SmoothedBarData[barSampleIndex-1] * 1.5f, 0f, 1f); //Scale values up a bit and clamp to 1f. I also invert this value since the keyboard is laid out with topleft being point 0,0
 
                 if (curBarHeight <= keyVerticalPos)
                 {
@@ -136,7 +136,7 @@ namespace CUEAudioVisualizer.Plugins
                 float keyVerticalPos = (keyCenterPos.Y / kbHeight);
                 float keyHorizontalPos = (keyCenterPos.X / kbWidth);
                 int barSampleIndex = (int)Math.Floor(barCount * (keyCenterPos.X / kbWidth)); //Calculate bar sampling index
-                float curBarHeight = 1f - Utility.Clamp(Host.SmoothedBarData[barSampleIndex] * 1.5f, 0f, 1f); //Scale values up a bit and clamp to 1f. I also invert this value since the keyboard is laid out with topleft being point 0,0
+                float curBarHeight = 1f - Utility.Clamp(Host.SmoothedBarData[barSampleIndex-1] * 1.5f, 0f, 1f); //Scale values up a bit and clamp to 1f. I also invert this value since the keyboard is laid out with topleft being point 0,0
 
                 if (curBarHeight <= keyVerticalPos)
                 {
